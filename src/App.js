@@ -2,7 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+function App({auth0, user}) {
+  console.log(user);
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +19,8 @@ function App() {
         >
           Learn React
         </a>
+        <p>Hi {user.name} 😊</p>
+        <button onClick={() => auth0.logout()}>Log out</button>
       </header>
     </div>
   );
